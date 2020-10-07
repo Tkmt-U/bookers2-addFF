@@ -10,6 +10,24 @@
 		<th>introduction</th>
 		<th><%= user.introduction %></th>
 	</tr>
+
+	<tr>
+		<th>follows</th>
+		<th>
+			<%= link_to user_follows_path(user.id), method: :get do %>
+				<%= user.follower.count %>
+			<% end %>
+		</th>
+	</tr>
+
+	<tr>
+		<th>followers</th>
+		<th>
+			<%= link_to user_followers_path(user.id), method: :get do %>
+				<%= user.followed.count %>
+			<% end %>
+		</th>
+	</tr>
 </table>
 
 <div class="row">
