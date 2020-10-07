@@ -45,7 +45,7 @@
 				<% end %>
 			</tr>
 		</table>
-		<div>
+		<table>
 			<% if @book_comment.errors.any? %>
 				<%= @book_comment.errors.count %>errors prohibited this obj from being saved:
 				<% @book_comment.errors.full_messages.each do |message| %>
@@ -68,13 +68,11 @@
 					<% end %>
 				<% end %>
 			</tr>
-			<tr>
-				<%= form_with(model:[@book, @book_comment], local: true) do |f| %>
-					<%= f.text_area :comment %>
-					<%= f.submit "送信" %>
-				<% end %>
-			</tr>
-		</div>
+		</table>
+		<%= form_with(model:[@book, @book_comment], local: true) do |f| %>
+			<%= f.text_area :comment %>
+			<%= f.submit "送信" %>
+		<% end %>
 	</div>
 </div>
 
